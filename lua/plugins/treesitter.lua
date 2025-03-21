@@ -1,3 +1,4 @@
+
 -- Customize Treesitter
 
 ---@type LazySpec
@@ -7,12 +8,6 @@ return {
     ensure_installed = {
       "lua",
       "vim",
-      "c",
-      "cpp",
-      "cuda",
-      "markdown",
-      "python",
-      "rust",
       -- add more arguments for adding more treesitter parsers
     },
   },
