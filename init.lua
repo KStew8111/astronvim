@@ -15,5 +15,10 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+vim.g.augment_workspace_folders = {
+  "/home/kyle/workspaces/gazebo_ws/src",
+  "/home/kyle/.config/nvim",
+}
+
 require "lazy_setup"
 require "polish"
