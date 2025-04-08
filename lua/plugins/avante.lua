@@ -3,18 +3,27 @@ return {
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    -- add any opts here
-    -- for example
-    provider = "claude",
-    claude = {
-      endpoint = "https://api.anthropic.com",
-      model = "claude-3-5-haiku-20241022", -- your desired model (or use gpt-4o, etc.)
-      max_tokens = 4096, -- Increase this to include reasoning tokens (for reasoning models)
-      --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+    provider = "ollama",
+    ollama = {
+      endpoint = "http://kyle-agx-orin.local:11434",
+      -- endpoint = "http://localhost:11434",
+      model = "qwen2.5-coder",
+      timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+    },
+    behaviour = {
+      enable_cursor_planning_mode = true, -- enable cursor planning mode!
+    },
+    rag_service = {
+      enabled = true, -- Enables the RAG service
+      host_mount = os.getenv "HOME", -- Host mount path for the rag service
+      provider = "ollama", -- The provider to use for RAG service (e.g. openai or ollama)
+      llm_model = "", -- The LLM model to use for RAG service
+      embed_model = "", -- The embedding model to use for RAG service
+      endpoint = "http://kyle-agx-orin.local:11434", -- The API endpoint for RAG service
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  build = "make",
+  build = "make BUILD_FROM_SOURCE=true",
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
