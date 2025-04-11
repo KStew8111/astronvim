@@ -7,14 +7,17 @@ return {
     ollama = {
       endpoint = "http://kyle-agx-orin.local:11434",
       -- endpoint = "http://localhost:11434",
-      model = "qwen2.5-coder",
+      -- model = "qwen2.5-coder",
+      -- model = "gemma3:27b",
+      -- model = "deepcoder",
+      model = "mistral-small3.1",
       timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
     },
-    behaviour = {
-      enable_cursor_planning_mode = true, -- enable cursor planning mode!
-    },
+    -- behaviour = {
+    --   enable_cursor_planning_mode = true, -- enable cursor planning mode!
+    -- },
     rag_service = {
-      enabled = true, -- Enables the RAG service
+      enabled = false, -- Enables the RAG service
       host_mount = os.getenv "HOME", -- Host mount path for the rag service
       provider = "ollama", -- The provider to use for RAG service (e.g. openai or ollama)
       llm_model = "", -- The LLM model to use for RAG service
