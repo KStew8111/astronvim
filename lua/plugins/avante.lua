@@ -5,13 +5,10 @@ return {
   opts = {
     provider = "ollama",
     ollama = {
-      endpoint = "http://kyle-agx-orin.local:11434",
-      -- endpoint = "http://localhost:11434",
-      -- model = "qwen2.5-coder",
-      -- model = "gemma3:27b",
-      -- model = "deepcoder",
-      model = "mistral-small3.1",
+      endpoint = "http://localhost:11434",
+      model = "qwen3:8b",
       timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+      -- disable_tools = true,
     },
     -- behaviour = {
     --   enable_cursor_planning_mode = true, -- enable cursor planning mode!
