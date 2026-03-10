@@ -5,11 +5,16 @@ return {
   event = "BufReadPost",
   opts = {
     suggestion = {
+      enabled = true,
       auto_trigger = true,
       keymap = {
-        accept = false, -- handled by completion engine
+        accept = "<M-y>",
       },
     },
+  },
+  filetypes = {
+    markdown = true,
+    ["*"] = true,
   },
   specs = {
     {
