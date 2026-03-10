@@ -11,15 +11,23 @@ return {
       ensure_installed = {
         -- install language servers
         "lua-language-server",
+        "pyright",
+        "clangd",
+        "markdown-oxide",
+        "rust-analyzer",
 
         -- install formatters
         "stylua",
+        "clang-format",
+        "autopep8",
 
         -- install debuggers
         "debugpy",
+        "cpptools",
 
         -- install any other package
         "tree-sitter-cli",
+        "cpplint",
       },
     },
   },
