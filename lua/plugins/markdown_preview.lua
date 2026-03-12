@@ -24,5 +24,9 @@ return {
       desc = "Markdown Preview",
     },
   },
-  config = function() vim.cmd [[do FileType]] end,
+  -- config = function() vim.cmd [[do FileType]] end,
+  config = function()
+    vim.g.mkdp_auto_close = 0
+    vim.cmd [[do FileType]]
+  end,
 }
