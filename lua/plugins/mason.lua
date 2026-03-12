@@ -20,6 +20,7 @@ return {
         "stylua",
         "clang-format",
         "autopep8",
+        "biome",
 
         -- install debuggers
         "debugpy",
